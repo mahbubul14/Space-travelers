@@ -5,7 +5,7 @@ import logo from './planet.png';
 const Nav = () => (
   <nav>
     <img src={logo} alt="space-logo" />
-    <h3>Space Traveler&apos Hub</h3>
+    <h2>Space Travelers &apos; Hub</h2>
     <ul>
       <li>
         <NavLink to="/">Rockets</NavLink>

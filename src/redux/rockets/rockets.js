@@ -4,22 +4,45 @@ const LOAD_ROCKET = 'space-travelers-hub/rockets/LOAD_ROCKET';
 
 const initialState = [];
 
-export const reserveTicket = (id) => ({
+const reserveTicket = (id) => ({
   type: RESERVE_TICKET,
   id,
 });
 
-export const cancelTicket = (id) => ({
+const cancelTicket = (id) => ({
   type: CANCEL_TICKET,
   id,
 });
 
-export const loadRockets = (payload) => ({
+const loadRockets = (payload) => ({
   type: LOAD_ROCKET,
   payload,
 });
 
-export const rocketsReducer = (state = initialState, action) => {
+const fetchRocketDataApi = async () => {
+  const resp = await fetch('https://api.spacexdata.com/v3/rockets');
+  const data = await resp.json();
+
+  const rocketData = await data.map((rocket) => (
+    {
+      id: rocket.id,
+      name: rocket.rocket_name,
+      type: rocket.rocket_type,
+      flickr_images: rocket.flickr_images,
+      description: rocket.description,
+    }
+  ));
+  return rocketData;
+};
+
+const laodRocketsData = () => async (dispatch) => {
+  const rockets = await fetchRocketDataApi();
+  if (rockets) {
+    dispatch(loadRockets(rockets));
+  }
+};
+
+const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_ROCKET:
       return action.payload.map((rocket) => {
@@ -58,4 +81,8 @@ export const rocketsReducer = (state = initialState, action) => {
     default:
       return state;
   }
+};
+
+export {
+  rocketsReducer, laodRocketsData, cancelTicket, reserveTicket,
 };

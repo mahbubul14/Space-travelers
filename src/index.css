@@ -1,0 +1,44 @@
+* { text-decoration: none; }
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  font-family: 'Red Hat Mono', monospace;
+}
+
+.missions-container {
+  margin: 2rem 3rem 2rem 3rem;
+  border-top: 1px solid #d9d6d6;
+  border-bottom: 1px solid #d9d6d6;
+  display: grid;
+  grid-template-columns: 1fr 5.5fr 1.5fr 1.5fr;
+}
+
+.missions-container span {
+  border: 1px solid #d9d6d6;
+  padding: 1rem;
+}
+
+span:nth-of-type(8n+5) {
+  background-color: #f1eeee;
+}
+
+span:nth-of-type(8n+6) {
+  background-color: #f1eeee;
+}
+
+span:nth-of-type(8n+7) {
+  background-color: #f1eeee;
+}
+
+span:nth-of-type(8n+8) {
+  background-color: #f1eeee;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+}

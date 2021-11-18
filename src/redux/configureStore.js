@@ -6,7 +6,7 @@ import missionsReducer from './missions/MissionsStore';
 
 const reducer = combineReducers({
   rocketsReducer,
-  missionsState: missionsReducer,
+  missionsReducer,
 });
 const middleware = [logger, thunk];
 

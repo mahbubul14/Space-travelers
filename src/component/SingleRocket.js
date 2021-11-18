@@ -25,14 +25,14 @@ const Rocket = (prop) => {
       <div>
         <h3>{name}</h3>
         {reserved && (
-        <div><Badge className="badge bg-info">Reserved</Badge></div>
+        <div><Badge>Reserved</Badge></div>
         )}
         <p>{description}</p>
         {!reserved && (
-          <Button type="button" className="btn btn-primary mt-1" onClick={handleReservation}>Reserve Rocket</Button>
+          <Button type="button" onClick={handleReservation}>Reserve Rocket</Button>
         )}
         {reserved && (
-        <Button type="button" className="btn btn-light btn-outline-danger" onClick={handleCancelReserv}>Cancel Reservation</Button>
+        <Button type="button" onClick={handleCancelReserv}>Cancel Reservation</Button>
         )}
       </div>
     </li>

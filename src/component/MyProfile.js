@@ -1,6 +1,27 @@
-import React from 'react';
+import { useSelector } from 'react-redux';
 
-const MyProfile = () => (
-  <h1>My profile page</h1>
-);
+const MyProfile = () => {
+  const rockets = useSelector((state) => state.rocketsReducer.rockets);
+  let reservedRockets;
+  if (rockets) {
+    reservedRockets = rockets.filter((rocket) => rocket.reserved);
+  }
+
+  return (
+
+    <div>
+      <h3>Rockets reservations</h3>
+      {reservedRockets && (
+        <ul>
+          {reservedRockets.map((rocket) => (
+            <li key={rocket.id}>
+              {rocket.name}
+            </li>
+          ))}
+
+        </ul>
+      )}
+    </div>
+  );
+};
 export default MyProfile;

@@ -4,14 +4,14 @@ const LOAD_ROCKET = 'space-travelers-hub/rockets/LOAD_ROCKET';
 
 const initialState = [];
 
-const reserveTicket = (id) => ({
+const reserveTicket = (payload) => ({
   type: RESERVE_TICKET,
-  id,
+  payload,
 });
 
-const cancelTicket = (id) => ({
+const cancelTicket = (payload) => ({
   type: CANCEL_TICKET,
-  id,
+  payload,
 });
 
 const loadRockets = (payload) => ({
@@ -31,6 +31,7 @@ const fetchRocketDataApi = async () => {
       flickr_images: rocket.flickr_images,
       description: rocket.description,
     }
+
   ));
   return rocketData;
 };
@@ -51,27 +52,29 @@ const rocketsReducer = (state = initialState, action) => {
       };
 
     case RESERVE_TICKET:
-      return state.map((rocket) => {
-        if (rocket.id !== action.id) {
-          return rocket;
-        }
-
-        return {
-          ...rocket,
-          reserverd: true,
-        };
-      });
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => (
+          (rocket.id !== action.payload)
+            ? {
+              ...rocket,
+            } : {
+              ...rocket, reserved: true,
+            }
+        )),
+      };
     case CANCEL_TICKET:
-      return state.map((rocket) => {
-        if (rocket.id !== action.id) {
-          return rocket;
-        }
-
-        return {
-          ...rocket,
-          reserverd: false,
-        };
-      });
+      return {
+        ...state,
+        rockets: state.rockets.map((rocket) => (
+          (rocket.id !== action.payload)
+            ? {
+              ...rocket,
+            } : {
+              ...rocket, reserved: false,
+            }
+        )),
+      };
     default:
       return state;
   }

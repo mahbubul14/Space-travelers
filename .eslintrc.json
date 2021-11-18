@@ -32,6 +32,8 @@
         "react/react-in-jsx-scope": "off",
         "import/no-unresolved": "off",
         "no-shadow": "off",
+        "consistent-return": "off",
+        "import/no-named-as-default": 0,
         "linebreak-style":"off"
     },
     "ignorePatterns": [

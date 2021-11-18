@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import Rockets from './component/Rockets';
 import Missions from './component/Missions';
 import MyProfile from './component/MyProfile';
 import Nav from './component/Nav';
+import { loadRocketsData } from './redux/rockets/rockets';
 import './App.css';
 
-function App() {
+const App = () => {
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(loadRocketsData());
+  }, [dispatch]);
+
   return (
     <Router>
       <Nav />
@@ -21,6 +28,6 @@ function App() {
       </Routes>
     </Router>
   );
-}
+};
 
 export default App;

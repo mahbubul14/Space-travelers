@@ -35,7 +35,7 @@ const fetchRocketDataApi = async () => {
   return rocketData;
 };
 
-const laodRocketsData = () => async (dispatch) => {
+const loadRocketsData = () => async (dispatch) => {
   const rockets = await fetchRocketDataApi();
   if (rockets) {
     dispatch(loadRockets(rockets));
@@ -45,17 +45,11 @@ const laodRocketsData = () => async (dispatch) => {
 const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
     case LOAD_ROCKET:
-      return action.payload.map((rocket) => {
-        const {
-          rocket_id: id,
-          rocket_name: name,
-          flickr_images: flickrImages,
-          description,
-        } = rocket;
-        return {
-          id, name, flickrImages, description,
-        };
-      });
+      return {
+        ...state,
+        rockets: action.payload,
+      };
+
     case RESERVE_TICKET:
       return state.map((rocket) => {
         if (rocket.id !== action.id) {
@@ -84,5 +78,5 @@ const rocketsReducer = (state = initialState, action) => {
 };
 
 export {
-  rocketsReducer, laodRocketsData, cancelTicket, reserveTicket,
+  rocketsReducer, loadRocketsData, cancelTicket, reserveTicket,
 };

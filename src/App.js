@@ -16,7 +16,10 @@ const App = () => {
 
   return (
     <Router>
-      <Nav />
+      <div>
+        <Nav />
+        <hr className="mb-5 mr-1 ml-1" />
+      </div>
       <Routes>
         <Route exact path="/" element={<Rockets />} />
       </Routes>

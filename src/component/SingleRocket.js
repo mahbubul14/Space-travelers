@@ -19,21 +19,23 @@ const Rocket = (prop) => {
   };
   return (
     <li>
-      <div>
-        <img src={flickrImages} alt="rocket-img" width="250" height="160" />
-      </div>
-      <div>
-        <h3>{name}</h3>
-        {reserved && (
-        <div><Badge>Reserved</Badge></div>
-        )}
-        <p>{description}</p>
-        {!reserved && (
+      <div className="flex">
+        <div className="mr-2 mb-4">
+          <img src={flickrImages} alt="rocket-img" width="250" height="160" />
+        </div>
+        <div className="rocket-des">
+          <h5>{name}</h5>
+          {reserved && (
+          <div><Badge className="bg-success">Reserved</Badge></div>
+          )}
+          <p className="mr-4">{description}</p>
+          {!reserved && (
           <Button type="button" onClick={handleReservation}>Reserve Rocket</Button>
-        )}
-        {reserved && (
-        <Button type="button" onClick={handleCancelReserv}>Cancel Reservation</Button>
-        )}
+          )}
+          {reserved && (
+          <Button className="bg-light text-dark" type="button" onClick={handleCancelReserv}>Cancel Reservation</Button>
+          )}
+        </div>
       </div>
     </li>
   );

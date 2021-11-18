@@ -10,7 +10,7 @@ const MyProfile = () => {
   return (
 
     <div>
-      <h3>Rockets reservations</h3>
+      <h3>My Rockets</h3>
       {reservedRockets && (
         <ul>
           {reservedRockets.map((rocket) => (

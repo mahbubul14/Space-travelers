@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { fetchAllMissions } from '../redux/missions/MissionsStore';
 import SingleMission from './SingleMission';
 
-const MissionElement = () => {
+const Missions = () => {
   const dispatch = useDispatch();
   const missionsData = useSelector((state) => state.missionsReducer);
   useEffect(() => {
@@ -21,4 +21,4 @@ const MissionElement = () => {
     </div>
   );
 };
-export default MissionElement;
+export default Missions;

@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation Links Tests renders correctly 1`] = `
+<div
+  className="profile-container"
+>
+  <div
+    className="profile"
+  >
+    <h3
+      className="reservations"
+    >
+      Rockets reservations
+    </h3>
+  </div>
+  <div
+    className="profile"
+  >
+    <h3
+      className="reservations"
+    >
+      Missions reservations
+    </h3>
+    <ul
+      className="profile-list"
+    />
+  </div>
+</div>
+`;

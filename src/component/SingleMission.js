@@ -1,4 +1,6 @@
 import { useDispatch } from 'react-redux';
+import { Badge } from 'react-bootstrap';
+import Button from 'react-bootstrap/Button';
 import { reserveMission, cancelMission } from '../redux/missions/MissionsStore';
 
 const SingleMission = (prop) => {
@@ -13,21 +15,24 @@ const SingleMission = (prop) => {
 
   const changeMissionsStatus = (id) => (!reserved ? dispatch(reserveMission(id))
     : dispatch(cancelMission(id)));
+  const className = reserved ? 'btn btn-light btn-outline-danger' : 'btn btn-primary mt-1';
+
   return (
     <>
       <span>
         <b>{missionName}</b>
       </span>
       <span className="description">{description}</span>
-      <span className="center">{reserved ? 'Active Member' : 'Not A Member'}</span>
+      <span className="center"><Badge className="badge bg-info mt-1">{reserved ? 'Active Member' : 'Not A Member'}</Badge></span>
       <span className="center">
-        <button
+        <Button
+          className={className}
           type="button"
           onClick={() => changeMissionsStatus(missionId)}
         >
           {reserved ? 'Leave Mission' : 'Join Mission'}
 
-        </button>
+        </Button>
 
       </span>
     </>

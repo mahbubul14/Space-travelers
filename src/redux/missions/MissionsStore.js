@@ -4,14 +4,17 @@ const CANCEL_MISSIONS = 'SpaceX-Project/books/CANCEL_MISSIONS';
 
 const MISSIONS_URL = 'https://api.spacexdata.com/v3/missions';
 const initialState = [];
+let loadedStatus = false;
 
 export const fetchAllMissions = () => async (dispatch) => {
   const response = await fetch(MISSIONS_URL);
   const data = await response.json();
-  dispatch({
+  if (loadedStatus) return;
+  await dispatch({
     type: FETCH_MISSIONS,
     data,
   });
+  loadedStatus = true;
 };
 
 export const reserveMission = (id) => ({

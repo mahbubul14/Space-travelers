@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import Rockets from './component/Rockets';
 import MyProfile from './component/MyProfile';
@@ -20,15 +20,17 @@ const App = () => {
         <Nav />
         <hr className="mb-5 mr-1 ml-1" />
       </div>
-      <Routes>
-        <Route exact path="/" element={<Rockets />} />
-      </Routes>
-      <Routes>
-        <Route path="/missions" element={<Missions />} />
-      </Routes>
-      <Routes>
-        <Route path="/my-profile" element={<MyProfile />} />
-      </Routes>
+      <Switch>
+        <Route exact path="/">
+          <Rockets />
+        </Route>
+        <Route path="/missions">
+          <Missions />
+        </Route>
+        <Route path="/my-profile">
+          <MyProfile />
+        </Route>
+      </Switch>
     </Router>
   );
 };

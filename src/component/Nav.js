@@ -10,13 +10,13 @@ const Nav = () => (
     </div>
     <ul className="d-flex">
       <li className="mr-2">
-        <NavLink to="/">Rockets</NavLink>
+        <NavLink to="/" className="links" style={(isActive) => ({ textDecoration: isActive ? 'underline' : 'none' })} exact>Rockets</NavLink>
       </li>
       <li className="mr-2">
-        <NavLink to="/missions">Missons</NavLink>
+        <NavLink to="/missions" className="links" style={(isActive) => ({ textDecoration: isActive ? 'underline' : 'none' })}>Missons</NavLink>
       </li>
       <li className="mr-2">
-        <NavLink to="/my-profile">My Profile</NavLink>
+        <NavLink to="/my-profile" className="links profile" style={(isActive) => ({ textDecoration: isActive ? 'underline' : 'none' })}>My Profile</NavLink>
       </li>
     </ul>
   </nav>

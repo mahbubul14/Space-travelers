@@ -1,70 +1,91 @@
-# Getting Started with Create React App
+# Space X Project
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Redux.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+> The Space-X Project is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
-In the project directory, you can run:
 
-### `yarn start`
+## Screenshot
+> |Rocket Section|Missions Version|Profile Section|
+> |--------------|----------------|---------------|
+> |![screenshot](./ScreenShots/Rockets-Section.png)|![screenshot2](./ScreenShots/Missions-Section.png)|![screenshot](./ScreenShots/Profile-Section.png)|
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Brief Demo
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+> ![screenshot](./ScreenShots/spacetravelers-hub.gif)
 
-### `yarn test`
+This **Single Page App**  was built with **React-Redux**. The main page `(Rocket Page)` has links to:
+- Rocket Page
+- Missions Page
+- Profile Page 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The contents displayed on the Rocket's page are fetched from a [Rocket API](https://api.spacexdata.com/v3/rockets). When a user clicks the _"Reserve rocket"_ button, actions are dispatched to update the store and the reserved rocket shows a _"Reserved"_ badge and "Cancel reservation" button instead of the default "Reserve rocket"
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The contents displayed on the Missions' page are fetched from a [Missions API](https://api.spacexdata.com/v3/missions). When a user clicks the _"Join Mission"_ button, actions are dispatched to update the store, the join mission button changes to _"Leave Mission"_ and the corresponding badge for that mission shows _"Active Member"_. On the other hand, when the _"Leave Mission"_ button is clicked, the button changes to _"Join Mission"_ and the corresponding badge shows _"Not A Member"_
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The Profile Page displays the Name of All `Reserved Rockets` and the `Joined Missions`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Built With
 
-### `yarn eject`
+- ### Major languages
+  - Javascript, CSS
+- ### Frameworks
+  - ReactJS, Redux, React-Redux, React Bootstrap
+- ### Technologies used
+  - Webpack, Babelrc, Linters
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Live Demo Links
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+🔗 [SpaceX](https://spacex-hub.netlify.app/)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Getting Started
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+To get a local copy up and running follow these simple example steps.
 
-## Learn More
+```
+git clone https://github.com/mahbubul14/Space-travelers.git
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+and then run
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+npm i
+npm start
+```
 
-### Code Splitting
+## Installation
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+to build a production version to `bulid` folder run
 
-### Analyzing the Bundle Size
+```
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Authors
+👨 **Mahbubul Alam**
 
-### Making a Progressive Web App
+- GitHub: [@mahbubul14](https://github.com/mahbubul14)
+- LinkedIn: []()
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Advanced Configuration
+👨🏿 **Akintoye Damilare**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- GitHub: [@dami1080](https://github.com/dami1080)
+- LinkedIn: []()
 
-### Deployment
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## 🤝 Contributing
 
-### `yarn build` fails to minify
+Contributions, issues, and feature requests are welcome!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Feel free to check the [issues page](https://github.com/mahbubul14/Space-travelers/issues).
+
+## Show your support
+
+Give a ⭐️ if you like this project!
+
+## Acknowledgments
+
+- Hat tip to [Microverse](https://www.microverse.org/) for the opprotunity to learn ReactJS and React_Redux using their platform
+- The [Rocket API](https://documenter.getpostman.com/view/2025350/RWaEzAiG) was used to retrieve data that was displayed in both the Rockets and Mission Section

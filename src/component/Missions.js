@@ -1,14 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux';
-import { useEffect } from 'react';
-import { fetchAllMissions } from '../redux/missions/MissionsStore';
+import { useSelector } from 'react-redux';
 import SingleMission from './SingleMission';
 
 const Missions = () => {
-  const dispatch = useDispatch();
   const missionsData = useSelector((state) => state.missionsReducer);
-  useEffect(() => {
-    dispatch(fetchAllMissions());
-  }, []);
   const emptyHeader = '';
   return (
     <div className="missions-container">
@@ -16,7 +10,8 @@ const Missions = () => {
       <span><b>Description </b></span>
       <span><b>Status</b></span>
       <span>{emptyHeader}</span>
-      {missionsData.map((item) => (<SingleMission key={item.mission_id} data={item} />
+      {missionsData && missionsData.map((item) => (
+        <SingleMission key={item.mission_id} data={item} />
       ))}
     </div>
   );

@@ -6,12 +6,14 @@ import MyProfile from './component/MyProfile';
 import Missions from './component/Missions';
 import Nav from './component/Nav';
 import { loadRocketsData } from './redux/rockets/rockets';
+import { fetchAllMissions } from './redux/missions/MissionsStore';
 import './App.css';
 
 const App = () => {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(loadRocketsData());
+    dispatch(fetchAllMissions());
   }, [dispatch]);
 
   return (

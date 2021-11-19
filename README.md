@@ -1,18 +1,18 @@
-# Space X Project
+![](https://img.shields.io/badge/Microverse-blueviolet)
+# Space Travelers' Hub
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app) and Redux.
 
 
-> The Space-X Project is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
+> The Space Travelers Project is a web application for a company that provides commercial and scientific space travel services. The application will allow users to book rockets and join selected space missions.
 
 
 ## Screenshot
 > |Rocket Section|Missions Version|Profile Section|
 > |--------------|----------------|---------------|
-> |![screenshot](./ScreenShots/Rockets-Section.png)|![screenshot2](./ScreenShots/Missions-Section.png)|![screenshot](./ScreenShots/Profile-Section.png)|
+> |![screenshot](./src/Rockets.png)|![screenshot2](./src/Mission.png)|![screenshot3](./src/My-profile.png)|
 
 ## Brief Demo
-
-> ![screenshot](./ScreenShots/spacetravelers-hub.gif)
 
 This **Single Page App**  was built with **React-Redux**. The main page `(Rocket Page)` has links to:
 - Rocket Page
@@ -37,7 +37,7 @@ The Profile Page displays the Name of All `Reserved Rockets` and the `Joined Mis
 
 ## Live Demo Links
 
-🔗 [SpaceX](https://spacex-hub.netlify.app/)
+🔗 [Space Travelers](https://spacex-hub.netlify.app/)
 
 ## Getting Started
 
@@ -66,7 +66,8 @@ npm run build
 👨 **Mahbubul Alam**
 
 - GitHub: [@mahbubul14](https://github.com/mahbubul14)
-- LinkedIn: []()
+- Twitter: [@twitterhandle](https://twitter.com/mahbubul_14)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/mahbubul-alam-20595/)
 
 
 👨🏿 **Akintoye Damilare**

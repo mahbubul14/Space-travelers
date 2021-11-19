@@ -10,7 +10,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Screenshot
 > |Rocket Section|Missions Version|Profile Section|
 > |--------------|----------------|---------------|
-> |![screenshot](./src/Rockets.png)|![screenshot2](./src/Mission.png)|![screenshot3](./src/My-profile.png)|
+> |![screenshot](./Rockets.png)|![screenshot2](./Mission.png)|![screenshot3](./My-profile.png)|
 
 ## Brief Demo
 

@@ -37,7 +37,7 @@ The Profile Page displays the Name of All `Reserved Rockets` and the `Joined Mis
 
 ## Live Demo Links
 
-🔗 [SpaceX](https://spacex-hub.netlify.app/)
+🔗 [SpaceX]()
 
 ## Getting Started
 

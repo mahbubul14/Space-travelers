@@ -37,7 +37,7 @@ The Profile Page displays the Name of All `Reserved Rockets` and the `Joined Mis
 
 ## Live Demo Links
 
-🔗 [Space Travelers](https://spacex-hub.netlify.app/)
+🔗 [Space Travelers](https://infallible-kowalevski-2274e5.netlify.app/)
 
 ## Getting Started
 
